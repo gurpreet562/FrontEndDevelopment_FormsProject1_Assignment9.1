@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>User Form Data</h1>
+  <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+    <div class="formgroup">
+      <label> Name </label>
+      <input type="text" class="form-control" name="name" [(ngModel)]="myName"><br>
+      <p>{{myName}}</p>
+      </div>
+    <div class="formgroup">
+      <label> Email </label>
+      <input type="text" class="form-control" name="email" [(ngModel)]="email"><br>
+      <p>{{email}}</p>
+      </div>
+    <div class="formgroup">
+      <label> Password </label>
+      <input type="password" class="form-control" name="password" ngModel><br>
+      </div>
+     <div class="form-group">
+       <label> City</label>
+                            <select class="txt-box" name="city" [(ngModel)]="city" class="form-control">
+                            <option [value]=" "   >Select Option </option>
+                            <option *ngFor="let city of cities">
+                                {{city.name}}
+                            </option>
+                         </select>
+                        </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
